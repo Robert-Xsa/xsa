@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XSA</title>
+  <style>
+    /* Fullscreen loading screen start */
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+    
+    /* Typing text with orange color and responsive font size */
+    .typing-text {
+        font-size: 5vw; /* Scales based on viewport width */
+        font-family: 'Courier New', Courier, monospace;
+        color: orange;
+        text-transform: uppercase;
+        letter-spacing: 0.5vw; /* Adjusts spacing proportionally */
+        text-align: center;
+        padding: 0 5%; /* Adds some padding for smaller screens */
+    }
+    
+    /* Adjustments for smaller screens */
+    @media (max-width: 768px) {
+        .typing-text {
+        font-size: 6vw; /* Slightly larger font for better readability */
+        letter-spacing: 0.3vw;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .typing-text {
+        font-size: 8vw; /* Even larger font for very small screens */
+        letter-spacing: 0.2vw;
+        }
+    }
+  /* Fullscreen loading screen ends */  
+
+  
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <h1 class="typing-text">
+      <span id="typing-effect"></span>
+    </h1>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" style="display: none;">
+    <h1>Welcome to XSA COMPANY!</h1>
+    <p>This is the main content of the page.</p>
+  </div>
+
+  <script>
+    //Screen loading start
+    document.addEventListener("DOMContentLoaded", function () {
+        const text = "XSA COMPANY"; // The text to type out
+        const typingElement = document.getElementById("typing-effect");
+        let index = 0;
+      
+        // Function to type one character at a time
+        function typeText() {
+          if (index < text.length) {
+            typingElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeText, 200); // Adjust typing speed here (in milliseconds)
+          } else {
+            // After typing is complete, hide loading screen and show main content
+            setTimeout(() => {
+              document.getElementById("loading-screen").style.display = "none";
+              document.getElementById("main-content").style.display = "block";
+            }, 1000); // Delay before showing main content
+          }
+        }
+      
+        // Start typing effect
+        typeText();
+      });
+
+      //Screen loading ends
+      
+  </script>
+</body>
+</html>
