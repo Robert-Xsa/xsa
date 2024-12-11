@@ -43,6 +43,22 @@
     color: #555;
   }
   
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icon {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .social-icon:hover {
+    color: #0056b3;
+  }
+  
   .contact-form {
     flex: 1;
     min-width: 280px;
@@ -78,5 +94,14 @@
   
   .contact-form button:hover {
     background-color: #0056b3;
+  }
+  
+  .map-container {
+    margin-top: 40px;
+  }
+  
+  .map-container iframe {
+    border-radius: 8px;
+    border: 1px solid #ccc;
   }
   
