@@ -1,3 +1,3 @@
 # XSA COMPANY
 
-https://robert-xsa.github.io/xsa/
+https://www.xsa-company.site/
